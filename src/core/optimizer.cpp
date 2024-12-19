@@ -1116,8 +1116,8 @@ void Optimizer::SaveTrajactoryPair(const Values &FinalEstimate,
         Pose3 save_pose = Pose3(
                 Rot3::Rodrigues(dr_poses_s.at<double>(i,0),dr_poses_s.at<double>(i,1),dr_poses_s.at<double>(i,2)), 
                 Point3(dr_poses_s.at<double>(i,3), dr_poses_s.at<double>(i,4), dr_poses_s.at<double>(i,5)));
-        save_result_1 << fixed << setprecision(9) << save_pose.rotation().quaternion()(1) << " " << save_pose.rotation().quaternion()(2) << " "
-                      << save_pose.rotation().quaternion()(3) << " " << save_pose.rotation().quaternion()(0) << " " << save_pose.x() << " " 
+        save_result_1 << fixed << setprecision(9) << save_pose.rotation().Quaternion()(1) << " " << save_pose.rotation().Quaternion()(2) << " "
+                      << save_pose.rotation().Quaternion()(3) << " " << save_pose.rotation().Quaternion()(0) << " " << save_pose.x() << " " 
                       << save_pose.y() << " " << save_pose.z() << endl;
     }
     for (size_t i = 0; i < dr_poses_t.rows; i++)
@@ -1125,8 +1125,8 @@ void Optimizer::SaveTrajactoryPair(const Values &FinalEstimate,
         Pose3 save_pose = Pose3(
                 Rot3::Rodrigues(dr_poses_t.at<double>(i,0),dr_poses_t.at<double>(i,1),dr_poses_t.at<double>(i,2)), 
                 Point3(dr_poses_t.at<double>(i,3), dr_poses_t.at<double>(i,4), dr_poses_t.at<double>(i,5)));
-        save_result_1 << fixed << setprecision(9) << save_pose.rotation().quaternion()(1) << " " << save_pose.rotation().quaternion()(2) << " "
-                      << save_pose.rotation().quaternion()(3) << " " << save_pose.rotation().quaternion()(0) << " " << save_pose.x() << " " 
+        save_result_1 << fixed << setprecision(9) << save_pose.rotation().Quaternion()(1) << " " << save_pose.rotation().Quaternion()(2) << " "
+                      << save_pose.rotation().Quaternion()(3) << " " << save_pose.rotation().Quaternion()(0) << " " << save_pose.x() << " " 
                       << save_pose.y() << " " << save_pose.z() << endl;
     }
 
@@ -1141,16 +1141,16 @@ void Optimizer::SaveTrajactoryPair(const Values &FinalEstimate,
     for (size_t i = 0; i < g_id_s.size(); i++)
     {
         Pose3 save_pose = FinalEstimate.at<Pose3>(Symbol('X',g_id_s[i]));
-        save_result_2 << fixed << setprecision(9) << save_pose.rotation().quaternion()(1) << " " << save_pose.rotation().quaternion()(2) << " "
-                      << save_pose.rotation().quaternion()(3) << " " << save_pose.rotation().quaternion()(0) << " " << save_pose.x() << " " 
+        save_result_2 << fixed << setprecision(9) << save_pose.rotation().Quaternion()(1) << " " << save_pose.rotation().Quaternion()(2) << " "
+                      << save_pose.rotation().Quaternion()(3) << " " << save_pose.rotation().Quaternion()(0) << " " << save_pose.x() << " " 
                       << save_pose.y() << " " << save_pose.z() << endl;
         
     }
     for (size_t i = 0; i < g_id_t.size(); i++)
     {
         Pose3 save_pose = FinalEstimate.at<Pose3>(Symbol('X',g_id_t[i]));
-        save_result_2 << fixed << setprecision(9) << save_pose.rotation().quaternion()(1) << " " << save_pose.rotation().quaternion()(2) << " "
-                      << save_pose.rotation().quaternion()(3) << " " << save_pose.rotation().quaternion()(0) << " " << save_pose.x() << " " 
+        save_result_2 << fixed << setprecision(9) << save_pose.rotation().Quaternion()(1) << " " << save_pose.rotation().Quaternion()(2) << " "
+                      << save_pose.rotation().Quaternion()(3) << " " << save_pose.rotation().Quaternion()(0) << " " << save_pose.x() << " " 
                       << save_pose.y() << " " << save_pose.z() << endl;
         
     }
@@ -1180,8 +1180,8 @@ void Optimizer::SaveTrajactoryAll(const Values &FinalEstimate, const std::vector
                     Point3(dr_poses_all[i].at<double>(j,3), dr_poses_all[i].at<double>(j,4), dr_poses_all[i].at<double>(j,5)));
             save_result_1 << fixed << setprecision(9) << save_pose.rotation().rpy()(0) << " " << save_pose.rotation().rpy()(1) << " "
                         << save_pose.rotation().rpy()(2) << " " << save_pose.x() << " " << save_pose.y() << " " << save_pose.z() << endl;
-            // save_result_1 << fixed << setprecision(9) << save_pose.rotation().quaternion()(1) << " " << save_pose.rotation().quaternion()(2) << " "
-            //             << save_pose.rotation().quaternion()(3) << " " << save_pose.rotation().quaternion()(0) << " " << save_pose.x() << " " 
+            // save_result_1 << fixed << setprecision(9) << save_pose.rotation().Quaternion()(1) << " " << save_pose.rotation().Quaternion()(2) << " "
+            //             << save_pose.rotation().Quaternion()(3) << " " << save_pose.rotation().Quaternion()(0) << " " << save_pose.x() << " " 
             //             << save_pose.y() << " " << save_pose.z() << endl;
         }
     }
@@ -1201,8 +1201,8 @@ void Optimizer::SaveTrajactoryAll(const Values &FinalEstimate, const std::vector
             Pose3 save_pose = FinalEstimate.at<Pose3>(Symbol('X',unique_id[i][j]));
             save_result_2 << fixed << setprecision(9) << save_pose.rotation().rpy()(0) << " " << save_pose.rotation().rpy()(1) << " "
                         << save_pose.rotation().rpy()(2) << " " << save_pose.x() << " " << save_pose.y() << " " << save_pose.z() << endl;
-            // save_result_2 << fixed << setprecision(9) << save_pose.rotation().quaternion()(1) << " " << save_pose.rotation().quaternion()(2) << " "
-            //             << save_pose.rotation().quaternion()(3) << " " << save_pose.rotation().quaternion()(0) << " " << save_pose.x() << " " 
+            // save_result_2 << fixed << setprecision(9) << save_pose.rotation().Quaternion()(1) << " " << save_pose.rotation().Quaternion()(2) << " "
+            //             << save_pose.rotation().Quaternion()(3) << " " << save_pose.rotation().Quaternion()(0) << " " << save_pose.x() << " " 
             //             << save_pose.y() << " " << save_pose.z() << endl;
             
         }
