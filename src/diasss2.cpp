@@ -15,6 +15,7 @@
 #include <opencv2/opencv.hpp>
 
 #include <Eigen/Dense>
+#include <boost/optional.hpp>
 
 using namespace std;
 using namespace cv;

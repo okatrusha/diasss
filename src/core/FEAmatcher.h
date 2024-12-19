@@ -7,6 +7,7 @@
 #include <Eigen/Core>
 #include <opencv2/highgui/highgui.hpp>
 #include <opencv2/core.hpp>
+#include <boost/optional.hpp>
 
 #include "frame.h"
 

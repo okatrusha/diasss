@@ -1,6 +1,8 @@
 
 #include "FEAmatcher.h"
 #include <bits/stdc++.h>
+#include <boost/optional.hpp>
+
 
 namespace Diasss
 {

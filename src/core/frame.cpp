@@ -6,6 +6,7 @@
 #include <Eigen/Core>
 #include <opencv2/core/eigen.hpp>
 #include <opencv2/opencv.hpp>
+#include <boost/optional.hpp>
 
 namespace Diasss
 {

@@ -6,6 +6,7 @@
 #include <opencv2/opencv.hpp>
 
 #include "ORBextractor.h"
+#include <boost/optional.hpp>
 
 namespace Diasss
 {

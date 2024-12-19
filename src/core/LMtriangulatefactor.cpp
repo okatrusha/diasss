@@ -1,5 +1,6 @@
 
 #include "LMtriangulatefactor.h"
+#include <boost/optional.hpp>
 
 namespace Diasss
 {

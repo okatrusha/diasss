@@ -1,5 +1,6 @@
 
 #include "SSSpointfactor.h"
+#include <boost/optional.hpp>
 
 namespace Diasss
 {
