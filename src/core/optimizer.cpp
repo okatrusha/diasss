@@ -8,6 +8,7 @@
 
 #include "optimizer.h"
 #include "util.h"
+#include <boost/optional.hpp>
 
 namespace Diasss
 {
