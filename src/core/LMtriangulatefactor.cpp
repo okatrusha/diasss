@@ -5,10 +5,13 @@
 namespace Diasss
 {
 
+
+// gtsam::Vector evaluateError(const gtsam::Point3& p, boost::optional<gtsam::Matrix&> H = boost::none) const override;
+
 // error function
 // @param p        the 3d point in Point3
 // @param H        the optional Jacobian matrixes, which use boost optional and has default null pointer
-gtsam::Vector LMTriaFactor::evaluateError(const gtsam::Point3& p, boost::optional<gtsam::Matrix&> H) const {
+gtsam::Vector LMTriaFactor::evaluateError(const gtsam::Point3& p, boost::optional<gtsam::Matrix&> H = boost::none) const {
 
     gtsam::Point3 p_s = Ts_.transformTo( Tp_.transformTo(p) );
 
